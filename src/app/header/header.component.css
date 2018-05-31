@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: whitesmoke;
+  box-shadow: 0 10px 20px -5px rgba(115,115,115,0.15);
+  padding: 20px 0px;
+  height: 122px;
+  color:dimgray;
+}
+
+.header-text {
+  margin-bottom: 20px;
+}
+
+.header .header-menu {
+  list-style: none;
+  width: 800px;
+  margin: auto;
+}
+
+.header a {
+  text-decoration: none;
+  color: dimgray;
+  padding: 16px;
+}
