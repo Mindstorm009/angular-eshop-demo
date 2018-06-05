@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   top: 0;
+  z-index: 100;
   width: 100%;
   background: whitesmoke;
   box-shadow: 0 10px 20px -5px rgba(115,115,115,0.15);

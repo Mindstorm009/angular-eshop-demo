@@ -1,0 +1,18 @@
+.categories-container .category-container {
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.categories-container .category-container img {
+  width: 250px;
+}
+
+.categories-container .category-container  {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.categories-container .category-container .image-container {
+  height: 340px;
+  vertical-align: center;
+}

@@ -1,3 +1,12 @@
-<h1>
-  Welcome to {{ title }}!
-</h1>
+<div class="categories-container">
+  <div class="row">
+    <div class="col-4" *ngFor="let category of categories | async">
+      <div class="category-container">
+        <div class="image-container">
+          <img src="{{ category.url }}">
+        </div>
+        <p>{{ category.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

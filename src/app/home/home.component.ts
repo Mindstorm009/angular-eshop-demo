@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Category} from '../model/category.model';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {Observable} from 'rxjs/index';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'Angular Demo e-Shop';
+  categories: Observable<Category[]> = Observable.create(null);
 
-  constructor() { }
+  constructor(private fireStore: AngularFirestore) { }
 
   ngOnInit() {
+    this.categories = this.fireStore.collection<Category>('category', ref => ref.orderBy('order')).valueChanges();
   }
-
 }
