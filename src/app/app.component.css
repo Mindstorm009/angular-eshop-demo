@@ -8,5 +8,9 @@
 .body-container {
   flex: 1;
   text-align:center;
+  color: dimgray;
 }
 
+app-footer {
+  background-color: #f1f1f1;
+}
