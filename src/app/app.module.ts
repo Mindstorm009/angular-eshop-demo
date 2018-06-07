@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import { CategoryComponent } from './category/category.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {ProductService} from './product.service';
+import {CategoryService} from './category.service';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [ ProductService, CategoryService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

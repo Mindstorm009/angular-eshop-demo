@@ -1,6 +1,6 @@
 .categories-container .category-container {
   width: 300px;
-  margin: 8px;
+  margin: 8px auto;
   padding: 8px;
   border-radius: 4px;
 }
