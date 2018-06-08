@@ -10,7 +10,8 @@ export class ProductService {
   constructor(private dbStore: AngularFirestore) { }
 
   getProductsByCategory(category: Category): Observable<Product[]> {
-    return this.dbStore.collection<Product>('products', queryFn => queryFn.where('category', '==', category)).valueChanges();
+    let ref = this.dbStore.doc('category/F5Fok7vmNSNZqirXSbPj').ref;
+    return this.dbStore.collection<Product>('products', queryFn => queryFn.where('category', '==', ref)).valueChanges();
   }
 
 }
