@@ -8,6 +8,7 @@
   padding: 20px 0px;
   height: 122px;
   color:dimgray;
+  padding: 16px;
 }
 
 .header-text {
@@ -23,5 +24,12 @@
 .header a {
   text-decoration: none;
   color: dimgray;
-  padding: 16px;
+}
+
+li {
+  padding: 8px;
+}
+li.active {
+  border-bottom: 2px solid black;
+  border-radius: 2px;
 }

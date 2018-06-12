@@ -1,7 +1,10 @@
 <div class="header">
-  <h2 class="header-text text-center"><a href="javascript:void(0)" routerLink="/">E-Shop Demo</a></h2>
+  <h2 class="header-text text-center">
+    <a href="javascript:void(0)" routerLink="/">E-Shop Demo</a>
+  </h2>
   <ul class="header-menu layout horizontal justified">
-    <li *ngFor='let category of categories | async'>
-      <a href="javascript:void(0)" [routerLink]="['category', category.id]">{{ category.name }}</a></li>
+    <li *ngFor='let category of categories | async' routerLinkActive="active">
+      <a href="javascript:void(0)" [routerLink]="['category', category.id]">{{ category.name }}</a>
+    </li>
   </ul>
 </div>
