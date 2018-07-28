@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/index';
 import {CategoryService} from '../category.service';
 import {switchMap} from 'rxjs/operators';
 import {Category} from '../model/category.model';
@@ -14,7 +14,7 @@ import {ProductService} from '../product.service';
 export class CategoryComponent implements OnInit {
 
   products: Observable<any[]> = Observable.create([]);
-
+  id: String = '';
   constructor(private activatedRoute: ActivatedRoute, private categoryService: CategoryService,
               private productService: ProductService) {
   }
@@ -24,7 +24,7 @@ export class CategoryComponent implements OnInit {
       const catId = params['id'];
       return this.categoryService.getCategoryById(catId);
     })).subscribe((category: Category) => {
-      console.log(category);
+      this.id = category.id;
       this.products = this.productService.getProductsByCategory(category);
     });
   }

@@ -1,0 +1,102 @@
+<form id="checkoutForm">
+  <div class="row">
+    <div class="col">
+      <label class="group-label" for="accountInfo">Account Information</label>
+      <div id="accountInfo">
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+        <input type="password" class="form-control" id="password" placeholder="Enter Password">
+      </div>
+      <div>
+        <label class="group-label" for="shippingAddress">Shipping Address</label>
+        <div id="shippingAddress">
+          <input type="text" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address">
+          <input type="text" class="form-control" id="city" placeholder="Enter Your Current City">
+          <input type="text" class="form-control" id="state" aria-describedby="emailHelp" placeholder="Enter State">
+          <input type="text" class="form-control" id="zipcode" placeholder="Enter Zipcode" maxlength="6">
+          <div class="layout horizontal start dropdown-menu-contrainer">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {{ selectedShippingCountry }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class='dropdown-item' type='button' *ngFor='let country    of countries' (click)="selectShippingCountry($event)">{{ country }}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <label class="group-label" for="billingInfo">Billing Address</label>
+        <div id="billingInfo">
+          <div class="layout horizontal start">
+            <paper-checkbox [(checked)]="useDifferentBillingAddress" (change)='showHideBillingAddress($event)'>
+              Use Different Billing Address
+            </paper-checkbox>
+          </div>
+          <div class="billing-address">
+            <input type="text" class="form-control" id="billing-address" aria-describedby="emailHelp" placeholder="Enter Address">
+            <input type="text" class="form-control" id="billing-city" placeholder="Enter Your Current City">
+            <input type="text" class="form-control" id="billing-state" aria-describedby="emailHelp" placeholder="Enter State">
+            <input type="text" class="form-control" id="billing-zipcode" placeholder="Enter Zipcode" maxlength="6">
+            <div class="layout horizontal start dropdown-menu-contrainer">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="billing-country-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{ selectedBillingCountry }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="billing-country-dropdown">
+                  <button class='dropdown-item' type='button' *ngFor='let country of countries' (click)="selectBillingCountry($event)">{{ country }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <label class="group-label" for="paymentMethod">Payment Method</label>
+      <div class='payment-method' id="paymentMethod">
+        <input type='text' class='form-control' id='cardHolderName' aria-describedby='emailHelp' placeholder='Cardholder Name'>
+        <input type='text' class='form-control' id='cardNumber' placeholder='Card Number'>
+        <div class="layout horizontal center">
+          <div class='layout horizontal start dropdown-menu-contrainer'>
+            <div class='dropdown'>
+              <button class='btn btn-primary dropdown-toggle' type='button' id='monthDropdown' data-toggle='dropdown' aria-haspopup='true'
+                aria-expanded='false'>
+                {{ selectedMonth }}
+              </button>
+              <div class='dropdown-menu' aria-labelledby='monthDropdown'>
+                <button class='dropdown-item' type='button' *ngFor='let month of months' (click)="selectMonth($event)">{{ month }}</button>
+              </div>
+            </div>
+          </div>
+          <div class='layout horizontal start dropdown-menu-contrainer'>
+            <div class='dropdown'>
+              <button class='btn btn-primary dropdown-toggle' type='button' id='monthDropdown' data-toggle='dropdown' aria-haspopup='true'
+                aria-expanded='false'>
+                {{ selectedYear }}
+              </button>
+              <div class='dropdown-menu' aria-labelledby='monthDropdown'>
+                <button class='dropdown-item' type='button' *ngFor='let year of years' (click)="selectYear($event)">{{ year }}</button>
+              </div>
+            </div>
+          </div>
+          <input type='text' class='form-control' id='cvv' placeholder='CVV'>
+        </div>
+      </div>
+      <label class="group-label" for="orderSummary">Order Summary</label>
+      <div class="layout vertical" id="orderSummary">
+        <div class='layout horizontal justified order'>
+          <div>Men's Tech Shell Full-Zip</div>
+          <div>$50.20</div>
+        </div>
+        <div class='layout horizontal justified order'>
+          <div>Total</div>
+          <div>$50.20</div>
+        </div>
+        <button class='btn btn-primary self-start btn-place-order' type='button' (click)="selectYear($event)">Place Order</button>
+      </div>
+    </div>
+  </div>
+</form>

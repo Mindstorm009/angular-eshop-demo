@@ -30,6 +30,6 @@ li {
   padding: 8px;
 }
 li.active {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #007bff;
   border-radius: 2px;
 }

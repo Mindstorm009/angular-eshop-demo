@@ -1,0 +1,33 @@
+.group-label {
+  width: 100%;
+  text-align: start;
+  font-weight: bold;
+  margin: 12px 8px 20px 8px;
+}
+
+.dropdown-menu-contrainer,
+.form-control,
+paper-checkbox {
+  margin: 8px;
+}
+
+.row {
+  margin: 24px;
+  margin-bottom: 36px;
+}
+
+.body-container {
+  margin-top: 24px;
+}
+
+.billing-address {
+  display: none;
+}
+
+.order {
+  margin: 8px;
+}
+
+.btn-place-order {
+  margin: 48px 8px 8px;
+}

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,10 @@ import { CategoryComponent } from './category/category.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {ProductService} from './product.service';
 import {CategoryService} from './category.service';
+import { ProductComponent } from './product/product.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
+import '@polymer/paper-checkbox';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import {CategoryService} from './category.service';
     FooterComponent,
     HomeComponent,
     CategoryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,9 @@ import {CategoryService} from './category.service';
     AngularFirestoreModule
   ],
   providers: [ ProductService, CategoryService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

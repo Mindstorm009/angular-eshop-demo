@@ -1,0 +1,58 @@
+.img-thumbnail {
+  position: absolute;
+  max-height: 80px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.img-thumbnail-container {
+  position: relative;
+  border-left: 2px solid transparent;
+  height: 80px;
+  margin-bottom: 8px;
+}
+
+.img-thumbnail-selected {
+  border-left: 2px solid #007bff;
+}
+
+.image-container,
+.main-img {
+  width: 250px;
+}
+
+.values {
+  margin-left: 12px;
+}
+
+.content-container {
+  margin: 8px 8px 8px 0px;
+}
+
+.btn-primary {
+  max-width: 270px;
+  max-height: 38px;
+  margin: 16px;
+}
+
+.main-img {
+  z-index: 2;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.main-img:hover {
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+
+.description {
+  text-align: start;
+}
