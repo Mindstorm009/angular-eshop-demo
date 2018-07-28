@@ -1,0 +1,14 @@
+
+<div class="products-container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 col-xs-12" *ngFor="let product of products | async">
+      <div class="product-container" [routerLink]="['/category',  product.category, product.subcategory, product.id]">
+        <div class="image-container">
+          <img src="{{ product.images[0] }}">
+        </div>
+        <h6 class="name">{{ product.name }}</h6>
+        <p class="price">{{ product.price | currency: 'INR' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

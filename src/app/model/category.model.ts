@@ -8,6 +8,7 @@ export class Category {
 }
 
 export class SubCategory {
+  id: string;
   name: string;
   url: string;
 }

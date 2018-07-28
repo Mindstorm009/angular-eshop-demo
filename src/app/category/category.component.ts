@@ -13,16 +13,20 @@ import {ProductService} from '../product.service';
 })
 export class CategoryComponent implements OnInit {
 
+  categoryId: string = null;
+  category: Observable<Category> = Observable.create(new Category());
   products: Observable<any[]> = Observable.create([]);
   id: String = '';
+
   constructor(private activatedRoute: ActivatedRoute, private categoryService: CategoryService,
               private productService: ProductService) {
   }
 
   ngOnInit() {
     this.activatedRoute.params.pipe(switchMap( (params: Params) => {
-      const catId = params['id'];
-      return this.categoryService.getCategoryById(catId);
+      this.categoryId = params['id'];
+      this.category = this.categoryService.getCategoryById(this.categoryId);
+      return this.category;
     })).subscribe((category: Category) => {
       this.id = category.id;
       this.products = this.productService.getProductsByCategory(category);

@@ -18,6 +18,7 @@ import { ProductComponent } from './product/product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 import '@polymer/paper-checkbox';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import '@polymer/paper-checkbox';
     CategoryComponent,
     PageNotFoundComponent,
     ProductComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

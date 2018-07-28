@@ -1,13 +1,19 @@
-<div class="products-container">
+
+<div class="subcategories-container">
   <div class="row">
-    <div class="col-lg-4 col-sm-6 col-xs-12" *ngFor="let product of products | async">
-      <div class="product-container" [routerLink]="['/category', id, product.id]">
-        <div class="image-container">
-          <img src="{{ product.images[0] }}">
+    <div class="col-lg-4 col-sm-12 col-xs-12" *ngFor="let subCategory of (category | async)?.subcategories">
+      <div class="subcategory-container">
+        <div class="subcategory-link" [routerLink]="['/category', categoryId, subCategory.id]">
+          <div class="image-container">
+            <img src="https://vignette.wikia.nocookie.net/fantendo/images/6/6e/Small-mario.png/revision/latest?cb=20120718024112">
+          </div>
+          <h6 class="name">{{ subCategory.name }}</h6>
         </div>
-        <h6 class="name">{{ product.name }}</h6>
-        <button type="button" class="btn btn-primary">Buy For: {{ product.price | currency: 'INR' }}</button>
       </div>
     </div>
   </div>
 </div>
+
+<hr class="subcategories-separator"/>
+
+<app-product-list [products]="products"></app-product-list>
