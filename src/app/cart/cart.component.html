@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="name">Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td class="name">{{product.name}}</td>
+        <td>{{product.price | currency: 'INR' }}</td>
+        <td>1</td>
+        <td>{{product.price | currency: 'INR' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

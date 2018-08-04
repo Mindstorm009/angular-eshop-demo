@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
   product: Product = new Product();
   id: String;
+  images: Array<String> = new Array<String>();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,12 +32,21 @@ export class ProductComponent implements OnInit {
       )
       .subscribe((product: Product) => {
         this.product = product;
+        this.images = product.images;
       });
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngAfterContentInit() {
+    console.log('Invoked.');
+
+  }
+
   updateSelection(e) {
-    const elements = document.getElementsByClassName('img-thumbnail-container');
-    const imgElColl: HTMLCollection  = document.getElementsByClassName('main-img');
+    const elements = document.getElementsByClassName('img-thumbnail');
+    const imgElColl: HTMLCollection = document.getElementsByClassName(
+      'main-img'
+    );
     const imgEl: any = imgElColl[0];
     imgEl.src = this.product.images[e];
 

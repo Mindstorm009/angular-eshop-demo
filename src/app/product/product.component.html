@@ -1,36 +1,28 @@
-<div class="layout vertical">
-  <div class="row self-center">
-    <div class="col-sm-2">
-      <div class="img-thumbnail-container img-thumbnail-selected" (click)="updateSelection(0)">
-        <img class="img-thumbnail" src="{{ product.images[0] }}">
-      </div>
-      <div class="img-thumbnail-container" (click)="updateSelection(1)">
-        <img class="img-thumbnail" src="{{ product.images[1] }}">
-      </div>
-      <div class="img-thumbnail-container" (click)="updateSelection(2)">
-        <img class="img-thumbnail" src="{{ product.images[2] }}">
-      </div>
+<div class="layout horizontal center-justified main-container">
+  <div class="thumbnai-container">
+    <div *ngFor="let product of images; let i = index">
+      <img [ngClass]="{'img-thumbnail-selected': i == 0}" (click)="updateSelection(i)" class="img-thumbnail" src="{{ product }}">
     </div>
-    <div class="col-sm-5 layout horizontal center">
-      <div class="image-container layout vertical center">
-        <img class="main-img" src="{{ product.images[0] }}">
-      </div>
+  </div>
+  <div class="layout horizontal">
+    <div class="image-container layout vertical center">
+      <img class="main-img" src="{{ product.images[0] }}">
     </div>
-    <div class="col-sm-4 layout vertical">
-      <h5 class="description">{{product.description}}</h5>
-      <div class="horizontal start-justified layout content-container">
-        <div class="labels">Rating: </div>
-        <div class="values">{{product.rating}}</div>
-      </div>
-      <div class="horizontal start-justified layout content-container">
-        <div class="labels">Stock: </div>
-        <div class="values">{{product.stock}}</div>
-      </div>
-      <div class="horizontal start-justified layout content-container">
-        <div class="labels">Colors: </div>
-        <div class="values">{{product.color}}</div>
-      </div>
-      <button type="button" class="btn btn-primary self-center" [routerLink]="['/checkout', id, product.id]">Buy For: {{ product.price | currency: 'INR' }}</button>
+  </div>
+  <div class="flex layout vertical description-container">
+    <h5 class="description">{{product.name}}</h5>
+    <div class="horizontal start-justified layout content-container">
+      <div class="labels">Rating: </div>
+      <div class="values">{{product.rating}}</div>
     </div>
+    <div class="horizontal start-justified layout content-container">
+      <div class="labels">Stock: </div>
+      <div class="values">{{product.stock}}</div>
+    </div>
+    <div class="horizontal start-justified layout content-container">
+      <div class="labels">Colors: </div>
+      <div class="values">{{product.color}}</div>
+    </div>
+    <button type="button" class="btn btn-primary self-center" [routerLink]="['/cart', id, product.id]">Buy For: {{ product.price | currency: 'INR' }}</button>
   </div>
 </div>

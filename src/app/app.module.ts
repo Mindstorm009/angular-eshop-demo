@@ -19,6 +19,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
 import '@polymer/paper-checkbox';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     PageNotFoundComponent,
     ProductComponent,
     CheckoutComponent,
-    ProductListComponent
+    ProductListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

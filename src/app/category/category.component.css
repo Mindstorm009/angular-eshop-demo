@@ -14,13 +14,10 @@
   cursor: pointer;
 }
 
-.subcategories-container .subcategory-container .image-container {
-  width: 250px;
-  height: 250px;
-  margin: auto;
-  border: 1px solid;
-  border-radius: 250px;
-  display: flex;
+.subcategories-container .subcategory-container .img-subcategory {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
 }
 
 .subcategories-container .subcategory-container .image-container img {

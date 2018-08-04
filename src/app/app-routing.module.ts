@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'category/:id/:subCatId', component: ProductListComponent },
   { path: 'category/:id/:subCatId/:prodId', component: ProductComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'cart/:id/:prodId', component: CartComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404' }
 ];

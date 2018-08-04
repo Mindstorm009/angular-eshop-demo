@@ -1,18 +1,8 @@
 .img-thumbnail {
-  position: absolute;
   max-height: 80px;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 80px;
+  margin: 8px;
   cursor: pointer;
-}
-
-.img-thumbnail-container {
-  position: relative;
-  border-left: 2px solid transparent;
-  height: 80px;
-  margin-bottom: 8px;
 }
 
 .img-thumbnail-selected {
@@ -45,14 +35,16 @@
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.main-img:hover {
-  -moz-transform: scale(2);
-  -webkit-transform: scale(2);
-  -o-transform: scale(2);
-  -ms-transform: scale(2);
-  transform: scale(2);
-}
 
 .description {
   text-align: start;
+}
+
+.thumbnai-container {
+  margin-right: 8px;
+}
+
+.description-container {
+  max-width: 250px;
+  margin-left: 36px;
 }
