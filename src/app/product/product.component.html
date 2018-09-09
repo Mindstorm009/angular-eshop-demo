@@ -23,6 +23,6 @@
       <div class="labels">Colors: </div>
       <div class="values">{{product.color}}</div>
     </div>
-    <button type="button" class="btn btn-primary self-center" [routerLink]="['/cart', id, product.id]">Buy For: {{ product.price | currency: 'INR' }}</button>
+    <button type="button" class="btn btn-primary self-center" (click) = 'addToCart()'>Buy For: {{ product.price | currency: 'INR' }}</button>
   </div>
 </div>

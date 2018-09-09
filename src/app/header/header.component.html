@@ -1,6 +1,9 @@
 <div class="header">
   <h2 class="header-text text-center">
     <a href="javascript:void(0)" routerLink="/">E-Shop Demo</a>
+    <button type="button" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </button>
   </h2>
   <ul class="header-menu layout horizontal justified">
     <li *ngFor='let category of categories | async' routerLinkActive="active">

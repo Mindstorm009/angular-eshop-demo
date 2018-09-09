@@ -9,11 +9,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr >
+      <tr *ngFor="let product of products">
         <td class="name">{{product.name}}</td>
         <td>{{product.price | currency: 'INR' }}</td>
-        <td>1</td>
-        <td>{{product.price | currency: 'INR' }}</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="billing-country-dropdown" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              {{product.qty}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="billing-country-dropdown">
+              <button class='dropdown-item' type='button' *ngFor='let changedQty of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]' (click)='changeQty(product, changedQty)'>{{ changedQty }}</button>
+            </div>
+          </div>
+        </td>
+        <td>{{(product.price * product.qty) | currency: 'INR' }}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" (click)='removeFromCart(product)'>Remove</button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -17,6 +17,14 @@ export class ProductService {
       .valueChanges();
   }
 
+  getProductsById(id: String): Observable<Product[]> {
+    return this.dbStore
+      .collection<Product>('products', queryFn =>
+        queryFn.where('id', '==', id)
+      )
+      .valueChanges();
+  }
+
   getProductsByCategoryAndSubcategory(
     category: string,
     subCategory: string
@@ -51,22 +59,24 @@ export class ProductService {
     return products;
   }
 
-  remove(id: string) {
-    const count = localStorage.getItem(id);
-    let numCount = Number.parseInt(count);
-    if (numCount > 1) {
-      numCount--;
-      localStorage.setItem(id, numCount.toString());
+  changeQty(id: string, qty: Number) {
+    if (qty > 0) {
+      localStorage.setItem(id, qty.toFixed());
     } else {
       localStorage.removeItem(id);
     }
   }
 
+  removeFromLocalStorage(id: string) {
+    localStorage.removeItem(id);
+  }
+
   addToLocalStorage(id: string) {
     const product = localStorage.getItem(id);
     if (product) {
-      let count = Number.parseInt('1');
-      localStorage.setItem(id, (count++).toFixed());
+      let count = Number.parseInt(product);
+      count++;
+      localStorage.setItem(id, count.toFixed());
     } else {
       localStorage.setItem(id, '1');
     }

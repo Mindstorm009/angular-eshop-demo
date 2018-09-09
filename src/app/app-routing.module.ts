@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'category/:id/:subCatId', component: ProductListComponent },
   { path: 'category/:id/:subCatId/:prodId', component: ProductComponent },
-  { path: 'cart/:id/:prodId', component: CartComponent },
+  { path: 'cart', component: CartComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404' }
 ];

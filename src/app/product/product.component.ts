@@ -1,6 +1,5 @@
 import { switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs/index';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ProductService } from './../product.service';
 import { Product } from './../model/product.model';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +16,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -39,7 +39,6 @@ export class ProductComponent implements OnInit {
   // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentInit() {
     console.log('Invoked.');
-
   }
 
   updateSelection(e) {
@@ -62,6 +61,13 @@ export class ProductComponent implements OnInit {
       elements[0].classList.add('img-thumbnail-selected');
       elements[1].classList.remove('img-thumbnail-selected');
       elements[2].classList.remove('img-thumbnail-selected');
+    }
+  }
+
+  addToCart() {
+    const value = localStorage.getItem(this.product.id);
+    if (+value < 10) {
+      this.productService.addToLocalStorage(this.product.id);
     }
   }
 }

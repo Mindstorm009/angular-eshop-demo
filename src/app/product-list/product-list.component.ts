@@ -27,7 +27,6 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('product =listsss');
     if (!this.products) {
       this.activatedRoute.params
         .pipe(
